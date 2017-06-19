@@ -20,3 +20,13 @@ CT_MMINBOX_OPENALL = "Open All";
 CT_MMINBOX_OPENALLTITLE = "Open All?";
 CT_MMINBOX_OPENALLCONFIRMATION = "Are you sure you want to open all mail?";
 CT_MMINBOX_DISPLAYPROCESSMESSAGES = "Display process messages";
+
+CT_CHAT_INVENTORYFULL = "<CTMod> Error: Inventory full. Aborting.";
+CT_CHAT_ALREADYMAXIMUM = "<CTMod> Error: You already have the maximum amount of that item. Skipping.";
+CT_CHAT_CTMODMAIL = "<CTMod> Mail ";
+CT_CHAT_SKIPPING = "|r is Cash on Delivery, skipping.";
+CT_CHAT_NOMONEYORITEMS = "|r has no money or items, skipping.";
+CT_CHAT_CTMODOPENINGMAIL = "<CTMod> Opening mail ";
+CT_CHAT_NOSUBJECT = "<No Subject>";
+CT_CHAT_FROM = "|r\" from |c00FFFFFF";
+CT_CHAT_UNKNOWNSENDER = "<Unknown Sender>";

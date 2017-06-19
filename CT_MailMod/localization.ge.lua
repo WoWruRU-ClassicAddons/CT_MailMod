@@ -17,4 +17,14 @@ if ( GetLocale() == "deDE" ) then
 	CT_MAIL_DONESENDING = "Verschicken von |c00FFFFFF%d|r P\195\164ckchen erledigt!";
 	CT_MAIL_ABORTED = "Abgebrochen. |c00FFFFFF%d|r/|c00FFFFFF%d|r P\195\164ckchen wurde(n) verschickt.";
 	CT_MAIL_ERROR = "Ein Fehler in CT_MailMod ist aufgetreten. Bitte \195\188bermittle einen Fehlerbericht auf http://www.ctmod.net";
+	
+	CT_CHAT_INVENTORYFULL = "<CTMod> Error: Inventory full. Aborting.";
+	CT_CHAT_ALREADYMAXIMUM = "<CTMod> Error: You already have the maximum amount of that item. Skipping.";
+	CT_CHAT_CTMODMAIL = "<CTMod> Mail ";
+	CT_CHAT_SKIPPING = "|r is Cash on Delivery, skipping.";
+	CT_CHAT_NOMONEYORITEMS = "|r has no money or items, skipping.";
+	CT_CHAT_CTMODOPENINGMAIL = "<CTMod> Opening mail ";
+	CT_CHAT_NOSUBJECT = "<No Subject>";
+	CT_CHAT_FROM = "|r\" from |c00FFFFFF";
+	CT_CHAT_UNKNOWNSENDER = "<Unknown Sender>";
 end

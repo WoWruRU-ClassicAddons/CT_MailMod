@@ -82,11 +82,11 @@ function CT_MMInbox_OnEvent(event)
 			if ( arg1 == ERR_INV_FULL ) then
 				CT_MMInbox_Abort();
 				if ( CT_MMInbox_DisplayMessages ) then
-					CT_MMInbox_Print("<CTMod> Error: Inventory full. Aborting.", 1, 0, 0);
+					CT_MMInbox_Print(CT_CHAT_INVENTORYFULL, 1, 0, 0);
 				end
 			elseif ( arg1 == ERR_ITEM_MAX_COUNT ) then
 				if ( CT_MMInbox_DisplayMessages ) then
-					CT_MMInbox_Print("<CTMod> Error: You already have the maximum amount of that item. Skipping.", 1, 0, 0);
+					CT_MMInbox_Print(CT_CHAT_ALREADYMAXIMUM, 1, 0, 0);
 				end
 				this.elapsed = CT_MMINBOX_DELETEDELAY;
 				if ( this.lastVal ) then
@@ -110,17 +110,17 @@ function CT_MMInbox_PickMail(id, openSelected)
 	local packageIcon, stationeryIcon, sender, subject, money, CODAmount, daysLeft, hasItem, wasRead, wasReturned, textCreated, canReply = GetInboxHeaderInfo(id);
 	if ( CODAmount > 0 ) then
 		if ( CT_MMInbox_DisplayMessages ) then
-			CT_MMInbox_Print("<CTMod> Mail |c00FFFFFF" .. this.numMails-(this.num-1) .. "|r/|c00FFFFFF" .. this.numMails .. "|r is Cash on Delivery, skipping.", 1, 0, 0);
+			CT_MMInbox_Print(CT_CHAT_CTMODMAIL.. "|c00FFFFFF" .. this.numMails-(this.num-1) .. "|r/|c00FFFFFF" .. this.numMails .. CT_CHAT_SKIPPING, 1, 0, 0);
 		end
 		return 0;
 	elseif ( not hasItem and money == 0 and not openSelected ) then
 		if ( CT_MMInbox_DisplayMessages ) then
-			CT_MMInbox_Print("<CTMod> Mail |c00FFFFFF" .. this.numMails-(this.num-1) .. "|r/|c00FFFFFF" .. this.numMails .. "|r has no money or items, skipping.", 1, 1, 0);
+			CT_MMInbox_Print(CT_CHAT_CTMODMAIL.. "|c00FFFFFF" .. this.numMails-(this.num-1) .. "|r/|c00FFFFFF" .. this.numMails .. CT_CHAT_NOMONEYORITEMS, 1, 1, 0);
 		end
 		return 0;
 	end
 	if ( CT_MMInbox_DisplayMessages ) then
-		CT_MMInbox_Print("<CTMod> Opening mail |c00FFFFFF" .. this.numMails-(this.num-1) .. "|r/|c00FFFFFF" .. this.numMails .. "|r: \"|c00FFFFFF" .. ( subject or "<No Subject>" ) .. "|r\" from |c00FFFFFF" .. ( sender or "<Unknown Sender>" ) .. "|r.", 1, 1, 0);
+		CT_MMInbox_Print(CT_CHAT_CTMODOPENINGMAIL.. "|c00FFFFFF" .. this.numMails-(this.num-1) .. "|r/|c00FFFFFF" .. this.numMails .. "|r: \"|c00FFFFFF" .. ( subject or CT_CHAT_NOSUBJECT ) .. CT_CHAT_FROM .. ( sender or CT_CHAT_UNKNOWNSENDER ) .. "|r.", 1, 1, 0);
 	end
 	local eventDelete;
 	if ( hasItem ) then
